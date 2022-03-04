@@ -1,0 +1,203 @@
+/* Horizontal search styles start */
+@use '../abstracts/colors' as c;
+@use '../abstracts/typography' as t;
+
+.search-container {
+    padding: 25px 0 15px 0;
+    background-color: lighten(c.$black, 20%);
+    .nav-pills {
+        display: block;
+        position: absolute;
+        list-style: none;
+        top: 0px;
+        left: 15px;
+        padding: 0;
+        z-index: 3;
+        li {
+            a {
+                color: rgba(c.$white, 0.6);
+                font-weight: 700;
+                text-decoration: none;
+                background-color: transparent;
+                margin-right: 15px;
+                font-size: 1rem;
+                line-height: 45px;
+                svg {
+                    fill: rgba(c.$white, 0.6);
+                    width: 20px;
+                    height: 20px;
+                    vertical-align: sub;
+                    transition: all 0.4s ease-in-out;
+                }
+            }
+            &.active {
+                a {
+                    color: c.$white;
+                    background-color: transparent;
+                    svg {
+                        fill: c.$white;
+                    }
+                }
+            }
+        }
+    }
+    input {
+        border: 0;
+        background: lighten(c.$black, 10%);
+        border-radius: 0;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        box-shadow: none;
+        height: 40px;
+        &.input-marg-down {
+            margin-top: 55px;
+            margin-bottom: 0;
+        }
+        &::placeholder {
+            color: c.$white;
+        }
+    }
+    .styled-select {
+        width: 100%;
+        padding: 10px;
+        border-radius: 0;
+        border: 0;
+        appearance: none;
+        height: 40px;
+        box-shadow: none;
+        color: c.$white;
+        background: lighten(c.$black, 10%) url("/images/select-bg.png") 98%
+            center no-repeat;
+        option {
+            background-color: lighten(c.$black, 20%);
+        }
+    }
+    .btn {
+        height: 40px;
+        line-height: 38px;
+    }
+    /*! Valuation CTA styles */
+    .val-search {
+        text-align: center;
+        color: c.$white;
+        z-index: 3;
+        background-color: c.$brand-primary;
+        box-shadow: 0px 14px 35px -12px rgba(c.$black, 0.75);
+        transition: all 0.4s ease-in-out;
+        h4 {
+            font-weight: 300;
+            margin: 0;
+            padding: 0;
+            span {
+                font-family: t.$secondary;
+                font-style: italic;
+            }
+        }
+        .btn {
+            margin-top: 20px;
+            svg {
+                fill: c.$white;
+                width: 20px;
+                vertical-align: sub;
+            }
+        }
+    }
+}
+@media (min-width: 1401px) {
+    .search-container {
+        .val-search {
+            padding: 20px;
+            width: 270px;
+            position: absolute;
+            top: -44px;
+            right: -95px;
+            h4 {
+                font-size: 1.8em;
+                line-height: 1.4em;
+            }
+        }
+    }
+}
+@media (min-width: 1301px) and (max-width: 1400px) {
+    .search-container {
+        .val-search {
+            padding: 10px;
+            width: 190px;
+            height: 210px;
+            position: absolute;
+            top: -60px;
+            right: -15px;
+            h4 {
+                font-size: 1.6em;
+                line-height: 1.2em;
+            }
+        }
+    }
+}
+@media (min-width: 1266px) and (max-width: 1300px) {
+    .search-container {
+        .val-search {
+            padding: 10px;
+            width: 190px;
+            height: 210px;
+            position: absolute;
+            top: -60px;
+            right: -10px;
+            h4 {
+                font-size: 1.6em;
+                line-height: 1.2em;
+            }
+        }
+    }
+}
+@media (min-width: 992px) and (max-width: 1265px) {
+    .search-container {
+        .val-search {
+            padding: 10px;
+            width: 160px;
+            height: 200px;
+            position: absolute;
+            top: -50px;
+            right: 0px;
+            h4 {
+                font-size: 1.4em;
+                line-height: 1.2em;
+            }
+        }
+    }
+}
+@media (max-width: 991px) {
+    .search-container {
+        input {
+            &.input-marg-down {
+                margin-bottom: 15px;
+            }
+        }
+        .val-search {
+            position: relative;
+            margin: 30px auto;
+            padding: 20px;
+            h4 {
+                font-size: 1.4em;
+                line-height: 1.2em;
+            }
+        }
+    }
+}
+@media (max-width: 575.98px) {
+    .search-container {
+        .nav-pills {
+            li {
+                a {
+                    font-size: 0.8rem;
+                }
+            }
+        }
+        input {
+            &.input-marg-down {
+                margin-bottom: 15px;
+            }
+        }
+    }
+}
+/* Horizontal search styles end */

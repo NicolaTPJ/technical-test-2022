@@ -1,0 +1,52 @@
+/* Conveyancing module styles start */
+@use '../abstracts/colors' as c;
+@use '../abstracts/variables' as v;
+
+#conveyancing-cta-btn {
+    position: fixed;
+    z-index: 3; // Make sure it sits above video container on home page
+    top: 300px;
+    display: block;
+    padding: 1.5rem 0.5rem;
+    background-color: c.$brand-primary;
+    border-top: 1px solid c.$white;
+    border-right: 1px solid c.$white;
+    border-bottom: 1px solid c.$white;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    writing-mode: vertical-lr;
+    text-orientation: sideways-right;
+    color: c.$white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1rem;
+    transition: v.$transition-3s;
+    &:hover {
+        background-color: c.$brand-secondary;
+    }
+}
+#conveyancing-cta-banner {
+    display: flex;
+    align-items: center;
+    background: url("/images/conveyancing.jpg") center center no-repeat;
+    background-size: cover;
+    height: 50vh;
+    h4 {
+        font-size: 2rem;
+        line-height: 1.9rem;
+        color: c.$white;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+    p {
+        font-size: 1rem;
+        color: c.$white;
+        margin-bottom: 20px;
+    }
+}
+@media (max-width: 768px) {
+    #conveyancing-cta-btn {
+        display: none;
+    }
+}
+/* Conveyancing module styles end */

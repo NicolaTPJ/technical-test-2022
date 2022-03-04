@@ -1,0 +1,15 @@
+<div class="row">
+	<div class="col-sm-12">
+		<form action="{!$this_page|escape}" method="get">
+			<div class="form-group">
+				{!fetch_request_hidden skip="orderby"}
+				<label for="{!if $secondinstance}orderbytwo{!else}orderby{!/if}" class="sr-only">Sort by:</label>
+				<select name="orderby" class="form-control" id="{!if $secondinstance}orderbytwo{!else}orderby{!/if}" onchange="$(this).closest('form').submit();">
+					<option value=""{!if $search.orderby == ""} selected="selected"{!/if} disabled="disabled">Order by Price</option>
+					<option value="price desc"{!if $search.orderby == "price desc"} selected="selected"{!/if}>Price: High to Low</option>
+					<option value="price asc"{!if $search.orderby == "price asc"} selected="selected"{!/if}>Price: Low to High</option>
+				</select>
+			</div>
+		</form>
+	</div>
+</div>

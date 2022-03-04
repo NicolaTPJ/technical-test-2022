@@ -1,0 +1,36 @@
+{!*
+    README
+    ------
+    The corner flashes have now all been consolidated into one file, this saves you time in editing and replacing them all in various places across your site builds.
+
+    You'll notice that they are all inline SVGs now as well. This means that you can change size, background and text fill colour within your CSS file. Just look for the class of 'corner-flash' and make your changes.
+
+    Within property related files where the corner flashes appear, you'll see that within the availability logic this include file is being called instead of having an img tag.
+*}
+{!if $let}
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414" class="corner-flash"><path d="M0 0v100L100 0H0z"/><text x="11.423" y="87.45" font-family="'Arial-BoldMT','Arial',sans-serif" font-weight="700" font-size="20" transform="rotate(-45 -25.48 53.006)">LET</text></svg>
+{!/if}
+{!if $letagreed}
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414" class="corner-flash"><path d="M0 0v100L100 0H0z"/><g font-family="'Arial-BoldMT','Arial',sans-serif" font-weight="700" font-size="15"><text x="41.625" y="34.444" transform="rotate(-45 38.218 62.656)">LET</text><text x="23.702" y="49.934" transform="rotate(-45 38.218 62.656)">AGREED</text></g></svg>
+{!/if}
+{!if $sold}
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414" class="corner-flash"><path d="M0 0v100L100 0H0z"/><text x="2.531" y="87.45" font-family="'Arial-BoldMT','Arial',sans-serif" font-weight="700" font-size="20" transform="rotate(-45 -25.48 53.006)">SOLD</text></svg>
+{!/if}
+{!if $soldstc}
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414" class="corner-flash"><path d="M0 0v100L100 0H0z"/><g font-family="'Arial-BoldMT','Arial',sans-serif" font-weight="700" font-size="15"><text x="34.956" y="34.444" transform="rotate(-45 37.48 62.962)">SOLD</text><text x="40.79" y="49.934" transform="rotate(-45 37.48 62.962)">STC</text></g></svg>
+{!/if}
+{!if $reduced}
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414" class="corner-flash"><path d="M0 0v100L100 0H0z"/><text x="-4.304" y="87.45" font-family="'Arial-BoldMT','Arial',sans-serif" font-weight="700" font-size="14" transform="rotate(-45 -25.48 53.006)">REDUCED</text></svg>
+{!/if}
+{!if $reserved}
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414" class="corner-flash"><path d="M0 0v100L100 0H0z"/><text x="-8.074" y="87.45" font-family="'Arial-BoldMT','Arial',sans-serif" font-weight="700" font-size="14" transform="rotate(-45 -25.48 53.006)">RESERVED</text></svg>
+{!/if}
+{!if $underoffer}
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414" class="corner-flash"><path d="M0 0v100L100 0H0z"/><g font-family="'Arial-BoldMT','Arial',sans-serif" font-weight="700" font-size="15"><text x="29.122" y="34.444" transform="rotate(-45 37.519 62.025)">UNDER</text><text x="30.375" y="49.934" transform="rotate(-45 37.519 62.025)">OFFER</text></g></svg>
+{!/if}
+{!if $featured}
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414" class="corner-flash"><path d="M0 0v100L100 0H0z"/><text x="-7.281" y="87.45" font-family="'Arial-BoldMT','Arial',sans-serif" font-weight="700" font-size="14" transform="rotate(-45 -25.48 53.006)">FEATURED</text></svg>
+{!/if}
+{!if $new}
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414" class="corner-flash"><path d="M0 0v100L100 0H0z"/><text x="6.98" y="87.45" font-family="'Arial-BoldMT','Arial',sans-serif" font-weight="700" font-size="20" transform="rotate(-45 -25.48 53.006)">NEW</text></svg>
+{!/if}

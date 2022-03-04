@@ -1,0 +1,32 @@
+/* Pagination styles start */
+@use '../abstracts/colors' as c;
+
+.pagination {
+    li {
+        a {
+            border: 1px solid c.$brand-primary;
+            color: c.$brand-primary;
+            &:hover,
+            &:active,
+            &:focus {
+                background-color: darken(c.$brand-secondary, 5%);
+                border: 1px solid c.$brand-primary;
+                color: c.$white;
+            }
+        }
+        &.active {
+            a {
+                background-color: c.$brand-primary;
+                color: c.$white;
+            }
+            &:hover,
+            &:active,
+            &:focus {
+                a {
+                    background-color: darken(c.$brand-primary, 5%);
+                }
+            }
+        }
+    }
+}
+/* Pagination styles end */

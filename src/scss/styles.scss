@@ -1,0 +1,99 @@
+/*! Boulevard Template | Primary Color: #306f84 | Secondary Color: #7b4b99 */
+// Framework imports
+@use "../../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap"; // Version: 3.4.1
+@use "../../node_modules/aos/dist/aos";
+@use "../../node_modules/swiper/swiper-bundle";
+// Template abstracts
+@use "abstracts/colors" as c;
+@use "abstracts/typography" as t;
+@use "abstracts/buttons";
+// Template Globals
+@use "global";
+// Template Modules
+@use "modules";
+// Template Property styles
+@use "property";
+// Template Search styles
+@use "searches";
+body,
+html {
+    height: 100%;
+    width: 100%;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    font-family: t.$primary;
+}
+#branch-contact-details {
+    p {
+        svg {
+            fill: c.$brand-primary;
+            vertical-align: middle;
+            width: 20px;
+        }
+    }
+}
+@media (min-width: 1201px) {
+    .nav-options a {
+        padding-left: 15px;
+        padding-right: 10px;
+    }
+    .left-button {
+        padding-right: 3px;
+    }
+    .right-button {
+        padding-left: 3px;
+    }
+    .property .room-icons {
+        text-align: right;
+    }
+}
+@media (max-width: 1200px) {
+    .property .room-icons {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+    .nav-options a {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+@media (min-width: 768px) {
+    .nav-options {
+        float: right;
+    }
+}
+@media (max-width: 991px) {
+    .dropdown .dropdown-menu .pointer {
+        left: 18%;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .nav-options a {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .nav-options .call-circle {
+        margin: 0px;
+    }
+    #main-navigation h3 {
+        margin-top: 40px;
+    }
+    .prop-type-box .btn-group .btn + .btn,
+    .prop-type-box .btn-group > .btn:first-child {
+        margin: 30px;
+    }
+}
+@media (max-width: 767px) {
+    .property img.property-thumb {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+@media (max-width: 379px) {
+    .nav-options .btn-ghost {
+        display: none;
+    }
+}

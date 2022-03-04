@@ -1,0 +1,22 @@
+/* Main header styles start */
+@use '../abstracts/colors' as c;
+
+#main-header {
+    position: relative;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 40%;
+    &:after {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(
+            0deg,
+            rgba(c.$black, 0.2) 20%,
+            rgba(c.$black, 0.9) 100%
+        );
+    }
+}
+/* Main header styles end */

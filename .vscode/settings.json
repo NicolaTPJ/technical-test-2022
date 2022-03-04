@@ -1,0 +1,10 @@
+// Basic settings for recommended extensions
+{
+    "gitlens.advanced.messages": {
+        "suppressShowKeyBindingsNotice": true
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "prettier.tabWidth": 4,
+    "prettier.jsxSingleQuote": true,
+    "cSpell.language": "en-GB"
+}

@@ -1,0 +1,51 @@
+/* Intro content styles start */
+@use '../abstracts/colors' as c;
+
+.intro-content {
+    h1,
+    h2 {
+        text-align: center;
+    }
+    h1 {
+        font-weight: 700;
+        color: lighten(c.$brand-primary, 15%);
+    }
+    h2 {
+        margin-top: 0px;
+    }
+    p {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .breadcrumb {
+        margin-bottom: 0px;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 1em;
+        background-color: transparent;
+        text-align: center;
+        li {
+            a {
+                text-decoration: none;
+                color: lighten(c.$grey, 20%);
+                &.active {
+                    color: lighten(c.$grey, 30%);
+                }
+                &:hover {
+                    color: c.$brand-primary;
+                }
+            }
+        }
+        > li + li {
+            &:before {
+                padding: 0 5px;
+                color: c.$brand-primary;
+                content: ">";
+            }
+        }
+    }
+    .btn {
+        margin-top: 50px;
+    }
+}
+/* Intro content styles end */

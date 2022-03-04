@@ -1,0 +1,70 @@
+/* Cookie bar styles start */
+@use '../abstracts/colors' as c;
+@use '../abstracts/typography' as t;
+
+/* Cookie Consent Custom Styles */
+.freeprivacypolicy-com---nb {
+    min-width: 100% !important;
+    font-family: t.$primary !important;
+    .cc-nb-main-container {
+        padding: 2rem !important;
+        // Overall button styles
+        .cc-nb-okagree,
+        .cc-nb-reject,
+        .cc-nb-changep {
+            font-size: 1rem !important;
+            text-transform: uppercase;
+            border-radius: 50px;
+            color: c.$white !important;
+        }
+        // Individual button styles
+        .cc-nb-okagree {
+            background-color: c.$brand-primary !important;
+        }
+        .cc-nb-reject {
+            background-color: c.$bootstrap-red !important;
+        }
+        .cc-nb-changep {
+            background-color: c.$brand-secondary !important;
+        }
+    }
+    // Dark theme background-color override
+    &.freeprivacypolicy-com---palette-dark {
+        background-color: rgba(c.$black, 0.8) !important;
+    }
+    &.freeprivacypolicy-com---palette-light {
+        background-color: rgba(c.$white, 0.8) !important;
+    }
+}
+
+.freeprivacypolicy-com---pc-overlay {
+    font-family: t.$primary !important;
+    .cc-cp-foot-byline {
+        // Hide branding
+        visibility: hidden;
+    }
+    .cc-cp-foot-save {
+        background-color: c.$brand-primary !important;
+        font-size: 1rem !important;
+        text-transform: uppercase;
+        border-radius: 50px;
+        color: c.$white !important;
+    }
+}
+
+@media (max-width: 320px) {
+    .freeprivacypolicy-com---nb {
+        height: auto !important;
+        font-size: 0.8rem !important;
+        .cc-nb-main-container {
+            padding: 1rem !important;
+            // Overall button styles
+            .cc-nb-okagree,
+            .cc-nb-reject,
+            .cc-nb-changep {
+                font-size: 0.8rem !important;
+            }
+        }
+    }
+}
+/* Cookie bar styles end */

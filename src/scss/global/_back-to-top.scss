@@ -1,0 +1,25 @@
+/* Back to top styles start */
+@use '../abstracts/colors' as c;
+#back-to-top {
+    background-color: c.$brand-primary;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    display: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    color: c.$white;
+    font-size: 44px;
+    line-height: 33px;
+    text-align: center;
+    border: 2px solid transparent;
+    z-index: 98;
+    &:hover,
+    &:active,
+    &:hover {
+        background-color: c.$brand-secondary;
+        border: 2px solid c.$white;
+    }
+}
+/* Back to top styles end */

@@ -1,0 +1,201 @@
+<!doctype html>
+{!config_load file="site-variables.conf"}
+<html lang="en-GB" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
+	<head>
+		<meta charset="utf-8">
+		<title>{!$options.sitename}</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<meta name="description" content="">
+		<meta property="og:type" content="website">
+		<meta property="og:locale" content="en_GB">
+		<meta property="og:url" content="{!$canonical_host}{!$this_page|escape}">
+		<meta property="og:site_name" content="{!$options.sitename}">
+		<meta property="og:title" content="">
+		<meta property="og:description" content="">
+		<meta property="og:image" content="{!$canonical_host}/images/open-graph-image.jpg">
+		<meta property="og:image:secure_url" content="{!$canonical_host}/images/open-graph-image.jpg">
+		<meta property="og:image:width" content="1200">
+		<link rel="shortcut icon" href="/images/favicon.ico">
+		<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon.png">
+		<link rel="canonical" href="{!$canonical_host}{!$this_page|escape}">
+		{!include file="includes/stylesheets.html"}
+	</head>
+	<body>
+		{!include file="includes/header.html"}
+		{!include file="includes/hero.html"}
+		<div id="start-search"></div>
+		<div class="search-container">
+			<div class="container position-relative">
+				<div class="row">
+					<div class="col-xs-12">
+						<ul class="nav-pills" role="tablist">
+							<li role="presentation" class="{!if $search.instruction_type == 'Sale'}active{!elseif $search.instruction_type == 'Letting'}{!else}active{!/if}">
+								<a href="#sale-search" aria-controls="sale-search" role="tab" data-toggle="tab"><svg enable-background="new 0 0 40 40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="m10.9 38.1 7.1-8.3c1.9.9 4 1.4 6.3 1.4 8.4 0 15.3-6.9 15.3-15.3s-6.9-15.3-15.3-15.3-15.3 6.9-15.3 15.3c0 2.5.6 4.8 1.7 6.9l-8.1 6.9c-1 .8-1.5 2-1.5 3.3 0 1.2.5 2.2 1.3 3.1l2.3 2.3c.9.9 2 1.3 3.2 1.3 1-.1 2.2-.6 3-1.6zm13.3-33.4c6.2 0 11.2 5 11.2 11.2s-5 11.2-11.2 11.2c-6.2-.1-11.2-5.1-11.2-11.2 0-6.2 5-11.2 11.2-11.2zm-16.8 30.8-2.3-2.3c-.1-.2-.1-.3 0-.3l7.8-6.7c.5.5.9 1 1.5 1.4l-6.7 7.9c0 .1-.1.1-.1.1-.1-.1-.1-.1-.2-.1z"/></svg> BUY SEARCH</a>
+							</li>
+							<li role="presentation" class="{!if $search.instruction_type == 'Letting'}active{!/if}">
+								<a href=""><svg enable-background="new 0 0 40 40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="m10.9 38.1 7.1-8.3c1.9.9 4 1.4 6.3 1.4 8.4 0 15.3-6.9 15.3-15.3s-6.9-15.3-15.3-15.3-15.3 6.9-15.3 15.3c0 2.5.6 4.8 1.7 6.9l-8.1 6.9c-1 .8-1.5 2-1.5 3.3 0 1.2.5 2.2 1.3 3.1l2.3 2.3c.9.9 2 1.3 3.2 1.3 1-.1 2.2-.6 3-1.6zm13.3-33.4c6.2 0 11.2 5 11.2 11.2s-5 11.2-11.2 11.2c-6.2-.1-11.2-5.1-11.2-11.2 0-6.2 5-11.2 11.2-11.2zm-16.8 30.8-2.3-2.3c-.1-.2-.1-.3 0-.3l7.8-6.7c.5.5.9 1 1.5 1.4l-6.7 7.9c0 .1-.1.1-.1.1-.1-.1-.1-.1-.2-.1z"/></svg> RENT SEARCH</a>
+							</li>
+						</ul>
+						<div class="tab-content">
+							<div role="tabpanel" {!if $search.instruction_type=="Sale"}class="tab-pane active" {!elseif $search.instruction_type=="Letting"}class="tab-pane" {!else}class="tab-pane active" {!/if} id="sale-search">
+								<form action="/search/" method="get">
+									<div class="row no-padding">
+										<input type="hidden" name="instruction_type" value="Sale">
+										<input type="hidden" name="showstc" value="on">
+										<div class="col-xs-12 col-sm-12 col-md-4">
+											<input type="text" name="address_keyword" class="form-control input-marg-down" id="tabbed-address_keyword-sales" {!if $search.address_keyword}value="{!$search.address_keyword|lower|capitalize:true}"{!else}placeholder="Your preferred area/postcode"{!/if}>
+										</div>
+										<div class="col-xs-12 col-sm-6 col-md-3">
+											<div class="form-group">
+												<select name="minprice" class="form-control styled-select" id="tabbed-minprice-sales">
+													<option value=""{!if $search.minprice == ""} selected="selected"{!/if}>Min Price</option>
+													{!include file="includes/search--sales-prices.html" minprice="true"}
+												</select>
+											</div>
+											<div class="form-group">
+												<select name="maxprice" class="form-control styled-select" id="tabbed-maxprice-sales">
+													<option value=""{!if $search.maxprice == ""} selected="selected"{!/if}>Max Price</option>
+													{!include file="includes/search--sales-prices.html" maxprice="true"}
+												</select>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-6 col-md-3">
+											<div class="form-group">
+												<select name="bedrooms" class="form-control styled-select" id="tabbed-bedrooms-sales">
+													<option value=""{!if $search.bedrooms == ""} selected="selected"{!/if}>Min Beds</option>
+													{!include file="includes/search--bedrooms.html" bedrooms="true"}
+												</select>
+											</div>
+											<button type="submit" class="btn btn-ghost btn-block" onclick="ListSearch(this)">SEARCH</button>
+										</div>
+									</div>
+								</form>
+							</div>
+							<div role="tabpanel" {!if $search.instruction_type=="Letting" }class="tab-pane active" {!else}class="tab-pane" {!/if} id="let-search">
+								<form action="/search/" method="get">
+									<div class="row no-padding">
+										<input type="hidden" name="instruction_type" value="Letting">
+										<input type="hidden" name="showstc" value="on">
+										<div class="col-xs-12 col-sm-12 col-md-4">
+											<input type="text" name="address_keyword" class="form-control input-marg-down" id="tabbed-address_keyword-lettings" {!if $search.address_keyword}value="{!$search.address_keyword|lower|capitalize:true}"{!else}placeholder="Your preferred area/postcode"{!/if}>
+										</div>
+										<div class="col-xs-12 col-sm-6 col-md-3">
+											<div class="form-group">
+												<select name="minprice" class="form-control styled-select" id="tabbed-minprice-lettings">
+													<option value=""{!if $search.minprice == ""} selected="selected"{!/if}>Min Price</option>
+													{!include file="includes/search--lettings-prices.html" minprice="true"}
+												</select>
+											</div>
+											<div class="form-group">
+												<select name="maxprice" class="form-control styled-select" id="tabbed-maxprice-lettings">
+													<option value=""{!if $search.maxprice == ""} selected="selected"{!/if}>Max Price</option>
+													{!include file="includes/search--lettings-prices.html" maxprice="true"}
+												</select>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-6 col-md-3">
+											<div class="form-group">
+												<select name="bedrooms" class="form-control styled-select" id="tabbed-bedrooms-lettings">
+													<option value=""{!if $search.bedrooms == ""} selected="selected"{!/if} disabled="disabled">Min Beds</option>
+													{!include file="includes/search--bedrooms.html" bedrooms="true"}
+												</select>
+											</div>
+											<button type="submit" class="btn btn-ghost btn-block" onclick="ListSearch(this)">SEARCH</button>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="val-search">
+					<h4>Get an instant online <span>valuation</span></h4>
+					<a href="#" class="btn btn-light">Go now <svg enable-background="new 0 0 40 40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="m2.6 18.9c-.7 0-1.4.6-1.4 1.4 0 .7.6 1.4 1.4 1.4h30.7l-15.4 15.3c-.5.5-.5 1.4 0 1.9s1.4.5 1.9 0l17.7-17.7c.3-.3.4-.6.4-.9 0-.4-.2-.8-.5-1.1l-17.6-17.6c-.5-.5-1.4-.5-1.9 0s-.5 1.4 0 1.9l15.4 15.4z"/></svg></a>
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid">
+			<div class="row home-content__container">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 no-padding">
+					<div class="home-intro" id="trigger-right">
+						<div>
+							<h2><span>Welcome to</span><br>{!$options.sitename} Estate Agents</h2>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla a augue lectus. Integer in tincidunt ante. Nam sed hendrerit eros. Sed faucibus lacinia lectus eu suscipit. Duis lorem leo, lobortis vitae tortor vel, mattis porttitor magna. Aliquam eget hendrerit massa, at tempor diam. Donec eu lorem mi. Phasellus elementum semper magna, sit amet dictum magna auctor non. Sed vulputate molestie euismod. Integer sed nisl purus. In non elit faucibus, bibendum felis in, vulputate purus.
+
+							Nunc lorem sapien, imperdiet et magna id, consectetur egestas ipsum. Donec faucibus eleifend consectetur. Suspendisse potenti. Nam eleifend, sapien quis dictum tempus, mauris nisl dignissim lacus, sed laoreet felis arcu eleifend justo. Cras eu fermentum sapien. Phasellus ac ultricies nisl. Suspendisse blandit lectus varius nisl pharetra, et fringilla urna viverra. Duis dignissim malesuada vehicula. Integer gravida eros quis sodales interdum.
+							<p><a href="/" class="btn btn-primary">Get in touch</a></p>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 no-padding">
+					<!-- Please include an image for us here -->
+					
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid no-padding">
+			<div class="row no-margin">
+				<div class="col-xs-3 col-md-8 no-padding">
+					<div class="home-panel" style="background:url('/images/couple-on-tablet.jpg') no-repeat top center;background-size:cover;">
+						<div class="vertical-align-container">
+							<div class="vertical-align-content">
+								<div class="register-panel">
+									<h3>Register for<br>Property Updates</h3>
+									<p class="lead">Hear about the latest properties.</p>
+									<a href="/register/" class="btn btn-primary">Register</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<a href="/valuation/" class="panel-link">
+					<div class="col-md-4 no-padding text-center">
+						<div class="home-panel">
+							<div class="val-panel">
+								<img loading="lazy" src="/images/keyring.png" width="231" height="169" alt="keyring" class="img-responsive center-block">
+								<h3>Selling your property</h3>
+								<p>Arrange a free, no obligation valuation</p>
+								<p class="btn btn-primary">Book a Valuation</p>
+							</div>
+						</div>
+					</div>
+				</a>
+				<div class="col-md-4 no-padding">
+					<div class="testimonial-panel">
+						<svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 39 32" xmlns="http://www.w3.org/2000/svg"><path d="m16.4 3.8c-6.8 5.1-9.5 9.5-9.5 15.2.9-.6 2.1-.9 3.4-.9 3.5 0 5.8 2.6 5.8 6.2 0 4-3 6.9-7.6 6.9-5.2 0-8-3.7-8-10.6-.1-7.6 3.1-12.4 13.3-19.9l2.6 3.1zm21.6 0c-6.9 5.2-9.6 9.6-9.6 15.3.9-.6 2.1-.9 3.4-.9 3.5 0 5.8 2.6 5.8 6.2 0 4-3 6.9-7.6 6.9-5.2 0-8-3.7-8-10.6 0-7.7 3.2-12.5 13.4-20l2.6 3.1z" fill-rule="nonzero"/></svg>
+						<div class="testimonial-fade">
+							<div class="testimonial-text">
+								<p class="testimonial">Happy review from someone</p>
+								<p class="pull-left">Customer</p>
+								<p class="pull-right"><a href="/testimonials/">Read Testimonials</a></p>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+				<div class="col-md-10 no-padding">
+					<div class="home-panel" style="background:url('/images/coffee-table.jpg') no-repeat top center;">
+						<div class="row no-margin">
+							<div class="col-xs-12 col-sm-6 col-sm-offset-6 col-md-6 col-md-offset-6">
+								<div class="letting-panel">
+									<div class="vertical-align-container">
+										<div class="vertical-align-content">
+											<h3>Letting your Property?</h3>
+											<p class="lead">Have complete peace of mind</p>
+											<a href="/lettings/" class="btn btn-primary">Lettings</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		{!include file="includes/val-instant-banner.html"}
+		{!include file="includes/footer.html"}
+		{!include file="includes/sticky-valuation.html"}
+		{!include file="includes/javascript.html"}
+	</body>
+</html>

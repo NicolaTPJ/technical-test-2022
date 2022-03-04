@@ -1,0 +1,54 @@
+/* Sticky valuation box styles start */
+@use '../abstracts/colors' as c;
+@use '../abstracts/typography' as t;
+
+.sticky-val {
+    text-align: center;
+    position: fixed;
+    width: 270px;
+    top: 100px;
+    right: 0px;
+    padding: 2rem;
+    text-align: center;
+    color: c.$white;
+    z-index: 11;
+    background-color: c.$brand-primary;
+    box-shadow: 0px 14px 35px -12px rgba(c.$black, 0.75);
+    transition: all 0.4s ease-in-out;
+    h4 {
+        font-size: 1.8em;
+        line-height: 1.4em;
+        color: c.$white;
+        font-weight: 300;
+        margin: 0;
+        padding: 0;
+        span {
+            font-family: t.$secondary;
+            font-style: italic;
+        }
+    }
+    .btn {
+        margin-top: 20px;
+        svg {
+            fill: c.$white;
+            width: 20px;
+            vertical-align: sub;
+        }
+    }
+    .close {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        opacity: 0.6;
+        svg {
+            fill: c.$white;
+            width: 15px;
+        }
+        &:hover,
+        &:active,
+        &:focus {
+            opacity: 1;
+        }
+    }
+}
+/* Sticky valuation box styles end */

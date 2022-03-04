@@ -1,0 +1,261 @@
+/* Header styles start */
+@use '../abstracts/colors' as c;
+
+header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    /*! Once you have an image or something in here, most of this code will be superfluous */
+    .header--logo {
+        a {
+            display: inline-block;
+            svg {
+                height: 50px;
+                fill: c.$white;
+            }
+            span {
+                font-size: 2.5rem;
+                font-weight: 300;
+                vertical-align: top;
+                margin-left: 0.5rem;
+            }
+        }
+    }
+    .nav-options {
+        .dropdown {
+            display: inline-block;
+            position: relative;
+            #dLabel {
+                letter-spacing: 0.1em;
+                .call-circle {
+                    margin-right: 10px;
+                    text-align: center;
+                    display: inline-block;
+                    width: 46px;
+                    height: 46px;
+                    line-height: 42px;
+                    border-radius: 50%;
+                    border: 2px solid c.$brand-primary;
+                    transition: all 0.4s ease-in-out;
+                    outline: 0 !important;
+                    svg {
+                        fill: c.$white;
+                        width: 22px;
+                        height: 22px;
+                        vertical-align: middle;
+                    }
+                    &.call-circle-alt {
+                        svg {
+                            fill: c.$brand-primary;
+                        }
+                    }
+                }
+                &:hover {
+                    .call-circle {
+                        background-color: c.$brand-primary;
+                        svg {
+                            fill: c.$white !important;
+                        }
+                    }
+                }
+            }
+            .dropdown-menu {
+                margin-top: 20px;
+                padding: 0px 20px;
+                border-radius: 10px;
+                text-align: center;
+                background-color: c.$brand-primary;
+                li {
+                    border-bottom: 1px solid c.$brand-primary;
+                    padding: 10px 0px;
+                    a {
+                        color: c.$white;
+                        &:hover,
+                        &:active,
+                        &:focus {
+                            color: c.$white;
+                            opacity: 0.6;
+                            background-color: c.$brand-primary;
+                        }
+                    }
+                    &.active {
+                        color: c.$white;
+                        opacity: 0.6;
+                        background-color: c.$brand-primary;
+                    }
+                    &.last {
+                        border-bottom: 0;
+                    }
+                    &.pointer {
+                        padding: 10px 0px;
+                        position: absolute;
+                        top: -20px;
+                        left: 50%;
+                        margin-left: -12px;
+                        width: 24px;
+                        height: 12px;
+                        overflow: hidden;
+                        &:after {
+                            content: "";
+                            position: absolute;
+                            width: 12px;
+                            height: 12px;
+                            left: 50%;
+                            transform: translate(-50%, 50%) rotate(45deg);
+                            background-color: c.$brand-primary;
+                            box-shadow: 0 1px 8px rgba(c.$black, 0.5);
+                        }
+                    }
+                }
+            }
+        }
+        .icon-valuation {
+            width: 45px;
+            vertical-align: middle;
+            .icon-valuation__house {
+                fill: c.$brand-primary;
+            }
+            .icon-valuation__currency {
+                fill: c.$white;
+            }
+        }
+        .header-search {
+            letter-spacing: 0.1em;
+            .icon-property-search {
+                width: 50px;
+                vertical-align: middle;
+                .icon-property-search__house,
+                .icon-property-search__door {
+                    fill: c.$brand-primary;
+                }
+                .icon-property-search__magnify {
+                    fill: c.$white;
+                }
+            }
+        }
+        .menu-button {
+            letter-spacing: 0.1em;
+            svg {
+                fill: c.$brand-primary;
+                vertical-align: middle;
+                width: 35px;
+            }
+        }
+    }
+    &.header-default,
+    &.header-scrolled,
+    &.header-property {
+        z-index: 300;
+        padding: 20px;
+        top: 0;
+        left: 0;
+        width: 100%;
+        a {
+            &:link,
+            &:visited,
+            &:focus {
+                font-size: 14px;
+                text-transform: uppercase;
+                cursor: pointer;
+                text-decoration: none;
+                font-weight: 700;
+            }
+        }
+    }
+    &.header-default {
+        a {
+            color: c.$white;
+            &:hover,
+            &:active,
+            &:focus {
+                text-decoration: none;
+                color: rgba(255, 255, 255, 0.6);
+            }
+        }
+    }
+    &.header-scrolled {
+        background-color: pink;
+        a {
+            color: c.$white;
+            &:hover,
+            &:active,
+            &:focus {
+                text-decoration: none;
+                color: rgba(255, 255, 255, 0.6);
+            }
+        }
+    }
+    &.header-property {
+        background-color: c.$white;
+        .header--logo {
+            a {
+                svg {
+                    fill: c.$brand-secondary;
+                }
+            }
+        }
+        a {
+            color: lighten(c.$black, 40%);
+            &:hover,
+            &:active,
+            &:focus {
+                text-decoration: none;
+                color: c.$grey;
+            }
+        }
+        .nav-options {
+            .icon-valuation {
+                .icon-valuation__currency {
+                    fill: c.$brand-secondary;
+                }
+            }
+            .icon-property-search {
+                .icon-property-search__magnify {
+                    fill: c.$brand-secondary;
+                }
+            }
+        }
+        &.header-scrolled {
+            border-bottom: 1px solid c.$bootstrap-grey;
+            box-shadow: 0 0 10px c.$grey;
+        }
+    }
+}
+@media (max-width: 767.98px) {
+    header {
+        .header--logo {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .nav-options {
+            text-align: center;
+            a {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+            .call-circle {
+                margin: 0px;
+            }
+        }
+    }
+}
+@media (max-width: 575.98px) {
+    header {
+        .header--logo {
+            text-align: center;
+            margin-bottom: 0.5rem;
+            span {
+                font-size: 2rem !important;
+            }
+        }
+        .nav-options {
+            a {
+                padding-left: 8px;
+                padding-right: 8px;
+            }
+        }
+    }
+}
+/* Header styles end */

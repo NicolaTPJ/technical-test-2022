@@ -1,0 +1,72 @@
+/* Modal styles start */
+@use '../abstracts/colors' as c;
+
+.modal {
+    &.menu-modal,
+    &.search-modal {
+        background-color: rgba(c.$black, 0.7);
+        z-index: 1041;
+        .close-mod {
+            position: fixed;
+            right: 30px;
+            top: 20px;
+            z-index: 1041;
+            cursor: pointer;
+            svg {
+                fill: c.$white;
+                width: 35px;
+            }
+        }
+        .modal-content {
+            padding-top: 0%;
+            border: 1px solid c.$black;
+            border-radius: 0px;
+            box-shadow: none;
+            background-color: transparent;
+            border: 0;
+            .modal-body {
+                position: relative;
+                padding: 20% 15px 15px 15px;
+                color: c.$white;
+                .styled-select {
+                    width: 100%;
+                    padding: 10px;
+                    border-radius: 0px;
+                    border: 0px;
+                    appearance: none;
+                    height: 40px;
+                    box-shadow: none;
+                    border: 1px solid c.$white;
+                    background: transparent url("/images/select-bg.png") 98%
+                        center no-repeat;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 991px) {
+    .modal {
+        &.in {
+            .modal-dialog {
+                transform: translate(0, 0%);
+            }
+        }
+    }
+}
+@media (min-width: 768px) {
+    .modal {
+        .modal-dialog {
+            width: auto;
+            max-width: 1170px;
+        }
+    }
+    .modal {
+        &#property-search {
+            .modal-dialog {
+                width: auto;
+                max-width: 700px;
+            }
+        }
+    }
+}
+/* Modal styles start */

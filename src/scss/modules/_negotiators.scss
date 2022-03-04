@@ -1,0 +1,73 @@
+/* Negotiators styles start */
+// Each <div> within the foreach loop on /meet-the-team/index.html
+@use '../abstracts/colors' as c;
+
+#negotiators {
+    .negotiator {
+        margin-top: 30px;
+        margin-bottom: 30px;
+        img {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        h2 {
+            font-size: 1.8em;
+            margin: 10px 0px 0px;
+        }
+        h3 {
+            font-size: 1.2em;
+            margin: 10px 0px 20px;
+            text-transform: uppercase;
+            a {
+                color: lighten(c.$grey, 10%);
+            }
+        }
+    }
+}
+// For negotiator.html
+#negotiator {
+    .negotiator--intro {
+        h1 {
+            margin: 0em;
+        }
+    }
+    .negotiator--bio {
+        margin-bottom: 30px;
+    }
+    .negotiator--contact {
+        .negotiator--social {
+            display: inline-block;
+            padding: 0.5rem;
+            border: 2px solid c.$brand-secondary;
+            border-radius: 50%;
+            .icon-facebook {
+                width: 25px;
+                fill: c.$brand-secondary;
+                vertical-align: bottom;
+            }
+            .icon-linkedin {
+                width: 25px;
+                fill: c.$brand-secondary;
+                vertical-align: bottom;
+            }
+            .icon-twitter {
+                width: 25px;
+                fill: c.$brand-secondary;
+                vertical-align: bottom;
+            }
+            .icon-facebook,
+            .icon-linkedin,
+            .icon-twitter {
+                &:hover,
+                &:active,
+                &:focus {
+                    fill: c.$brand-primary;
+                }
+            }
+        }
+        .btn {
+            margin: 20px 0px 10px;
+        }
+    }
+}
+/* Negotiators styles end */

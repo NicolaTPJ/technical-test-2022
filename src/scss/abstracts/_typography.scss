@@ -1,0 +1,118 @@
+/* Typography styles start */
+@use '../abstracts/colors' as c;
+
+@font-face {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: local("Montserrat Light"), local("Montserrat-Light"),
+        url("../fonts/montserrat-v14-latin/montserrat-v14-latin-300.woff2")
+            format("woff2"),
+        url("../fonts/montserrat-v14-latin/montserrat-v14-latin-300.woff")
+            format("woff");
+}
+@font-face {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local("Montserrat Regular"), local("Montserrat-Regular"),
+        url("../fonts/montserrat-v14-latin/montserrat-v14-latin-regular.woff2")
+            format("woff2"),
+        url("../fonts/montserrat-v14-latin/montserrat-v14-latin-regular.woff")
+            format("woff");
+}
+@font-face {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: local("Montserrat Bold"), local("Montserrat-Bold"),
+        url("../fonts/montserrat-v14-latin/montserrat-v14-latin-700.woff2")
+            format("woff2"),
+        url("../fonts/montserrat-v14-latin/montserrat-v14-latin-700.woff")
+            format("woff");
+}
+@font-face {
+    font-family: "Libre Baskerville";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local("Libre Baskerville"), local("LibreBaskerville-Regular"),
+        url("../fonts/libre-baskerville-v7-latin/libre-baskerville-v7-latin-regular.woff2")
+            format("woff2"),
+        url("../fonts/libre-baskerville-v7-latin/libre-baskerville-v7-latin-regular.woff")
+            format("woff");
+}
+@font-face {
+    font-family: "Libre Baskerville";
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src: local("Libre Baskerville Italic"), local("LibreBaskerville-Italic"),
+        url("../fonts/libre-baskerville-v7-latin/libre-baskerville-v7-latin-italic.woff2")
+            format("woff2"),
+        url("../fonts/libre-baskerville-v7-latin/libre-baskerville-v7-latin-italic.woff")
+            format("woff");
+}
+$primary: "Montserrat", serif;
+$secondary: "Libre Baskerville", serif;
+h1 {
+    font-size: 3em;
+    font-weight: 300;
+    line-height: 1.2em;
+    margin: 0 0 0.75em 0;
+}
+h2 {
+    font-size: 2.2em;
+    font-weight: 300;
+    line-height: 1.5em;
+    margin: 0 0 0.75em 0;
+}
+h3 {
+    font-size: 1.8em;
+    font-weight: 300;
+    line-height: 1.5em;
+    margin: 0 0 0.75em 0;
+}
+h4 {
+    font-size: 1.3em;
+    font-weight: 300;
+    line-height: 1.5em;
+    margin: 0 0 1em 0;
+}
+h5 {
+    font-size: 1em;
+    font-weight: 300;
+    line-height: 1.6em;
+    margin: 0 0 2em 0;
+}
+p {
+    line-height: 1.5em;
+}
+a {
+    transition: all 0.4s ease-in-out;
+    outline: 0 !important;
+    &:link,
+    &:visited {
+        color: c.$brand-primary;
+    }
+    &:active,
+    &:hover,
+    &:focus {
+        color: darken(c.$brand-primary, 3%);
+    }
+    &[href^="tel:"] {
+        text-decoration: none;
+    }
+}
+.small-line {
+    // Used for page titles and headings
+    width: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    border-top: 5px solid lighten(c.$grey, 30%);
+}
+/* Typography styles end */

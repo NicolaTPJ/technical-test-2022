@@ -1,0 +1,67 @@
+{!*
+    For instructions, see https://www.freeprivacypolicy.com/free-cookie-consent/
+*}
+<script src="//www.freeprivacypolicy.com/public/cookie-consent/4.0.0/cookie-consent.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        cookieconsent.run({
+            // Set your options
+            "notice_banner_type":                       "simple", // headline, interstitial, standalone
+            "consent_type":                             "express", // implied
+            "palette":                                  "dark", // Or light
+            "language":                                 "en",
+            "page_load_consent_levels":                 [
+                                                            "strictly-necessary"
+                                                        ],
+            "notice_banner_reject_button_hide":         false, // true
+            "preferences_center_close_button_hide":     false, // true
+            "website_privacy_policy_url":               "/privacy-policy-and-notice/",
+            "website_name":                             "{!$options.sitename}"
+        });
+    });
+</script>
+
+{!*
+    Google Tag Manager, Google Analytics, AddThis etc., will need their script tag modified
+    in order for the cookie plugin to block them and enable the end-user to accept or reject
+
+    EXAMPLE:
+    <!-- Google Analytics -->
+    <script type="text/plain" cookie-consent="tracking">
+        ... Script in here ...
+    </script>
+
+    MIME Type:                  type="text/plain"
+    Cookie Consent Options:     cookie-consent="{Choose appropriate category}"
+
+    There are four categories to consider when modifying script tags.
+
+    <!-- Script used for Strictly Necessary Cookies -->
+    <script type="text/plain" cookie-consent="strictly-necessary"></script>
+    <!--
+        ie. account login related cookies, PHP session IDs.
+    -->
+
+    <!-- Script used for Functionality -->
+    <script type="text/plain" cookie-consent="functionality"></script>
+    <!--
+        ie. remembering users choices, this would also be our add to shortlist cookie.
+    -->
+
+    <!-- Script used for Tracking -->
+    <script type="text/plain" cookie-consent="tracking"></script>
+    <!--
+        ie. Google Analytics, Google Tag Manager, Hotjar, Chat widget scripts. AddThis
+        sharing buttons would also fall under this category, they provide functionality
+        but also track users. Tracking users and privacy take priority when assigning
+        categories to script tags.
+    -->
+
+    <!-- Script used for Targeting -->
+    <script type="text/plain" cookie-consent="targeting"></script>
+    <!--
+        ie. Facebook Pixels, Google AdSense, Google AdWords and other advertising scripts.
+        Our clients don't typically use these types of services, but they may do.
+    -->
+*}

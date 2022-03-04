@@ -1,0 +1,351 @@
+/* Property details styles start */
+@use '../abstracts/colors' as c;
+
+#property--details {
+    .property-header {
+        background-size: cover;
+        height: 800px;
+        position: relative;
+    }
+    .property-content-area-contain {
+        background: rgba(c.$brand-primary, 0.7);
+        display: table;
+        height: 100%;
+        width: 100%;
+        .property-content-area {
+            display: table-cell;
+            height: 100%;
+            width: 100%;
+            vertical-align: middle;
+            .shortlist-button {
+                position: absolute;
+                top: 0px;
+                right: 0px;
+                .btn-light {
+                    display: block;
+                    border-radius: 0px;
+                    letter-spacing: 0em;
+                    svg {
+                        fill: c.$white;
+                        height: 25px;
+                        margin-right: 0.5rem;
+                        vertical-align: sub;
+                    }
+                }
+            }
+            #property-carousel {
+                .carousel-inner {
+                    .item {
+                        img {
+                            max-height: 500px;
+                            width: auto;
+                            border: 5px solid c.$white;
+                            margin: 0 auto;
+                        }
+                    }
+                    a {
+                        cursor: pointer;
+                    }
+                }
+                a {
+                    &:hover,
+                    &:active,
+                    &:focus {
+                        .left-arrow,
+                        .right-arrow {
+                            background: c.$bootstrap-grey;
+                            position: absolute;
+                            top: 45%;
+                            z-index: 50;
+                        }
+                    }
+                }
+                .left-arrow,
+                .right-arrow {
+                    position: absolute;
+                    top: 45%;
+                    z-index: 50;
+                    display: block;
+                    background: c.$white;
+                    width: 40px;
+                    height: 40px;
+                    padding: 5px 6px;
+                    text-align: center;
+                    top: 45%;
+                    line-height: 40px;
+                    svg {
+                        height: 30px;
+                        fill: c.$brand-secondary;
+                    }
+                }
+                .left-arrow {
+                    left: -10px;
+                }
+                .right-arrow {
+                    right: -10px;
+                    svg {
+                        transform: scaleX(-1);
+                    }
+                }
+            }
+            #property-thumbnails {
+                .carousel-inner {
+                    .item {
+                        img {
+                            &.img-thumbnail {
+                                border-radius: 0;
+                                padding: 0px;
+                                border: 2px solid c.$white;
+                            }
+                        }
+                    }
+                }
+                a {
+                    &:hover,
+                    &:active,
+                    &:focus {
+                        .left-arrow,
+                        .right-arrow {
+                            background: c.$bootstrap-grey;
+                        }
+                    }
+                }
+                .left-arrow,
+                .right-arrow {
+                    position: absolute;
+                    top: 25%;
+                    z-index: 50;
+                    display: block;
+                    background: c.$white;
+                    width: 40px;
+                    height: 40px;
+                    padding: 5px 6px;
+                    text-align: center;
+                    top: 25%;
+                    line-height: 40px;
+                    svg {
+                        height: 30px;
+                        fill: c.$brand-secondary;
+                    }
+                }
+                .left-arrow {
+                    left: -10px;
+                }
+                .right-arrow {
+                    right: -10px;
+                    svg {
+                        transform: scaleX(-1);
+                    }
+                }
+            }
+            h1 {
+                font-size: 1.8em;
+                font-weight: 700;
+                margin-bottom: 0px;
+                color: c.$white;
+            }
+            h2 {
+                font-size: 1.4em;
+                text-transform: uppercase;
+                margin: 0;
+                color: c.$white;
+                a {
+                    color: c.$white;
+                    text-decoration: none;
+                    &:hover,
+                    &:active,
+                    &:focus {
+                        opacity: 0.6;
+                    }
+                }
+            }
+            .room-icons {
+                margin-top: 20px;
+                margin-bottom: 20px;
+                svg {
+                    height: 25px;
+                    fill: c.$white;
+                    vertical-align: bottom;
+                }
+                span {
+                    padding-right: 10px;
+                    font-size: 1em;
+                    color: c.$white;
+                }
+            }
+            p {
+                color: c.$white;
+                &.shortlist-link {
+                    padding-top: 20px;
+                    padding-bottom: 20px;
+                    a {
+                        color: c.$white;
+                        text-decoration: none;
+                        span {
+                            svg {
+                                fill: c.$white;
+                                height: 25px;
+                                margin-right: 0.5rem;
+                                vertical-align: sub;
+                            }
+                        }
+                        &:hover,
+                        &:active,
+                        &:focus {
+                            opacity: 0.7;
+                        }
+                    }
+                }
+            }
+            .addthis_sharing_toolbox {
+                margin-top: 15px;
+            }
+        }
+    }
+    .position-relative {
+        .line-thumbs {
+            position: absolute;
+            top: 70px;
+            width: 100%;
+            border-top: 1px solid lighten(c.$grey, 40%);
+        }
+        .tabs-container {
+            margin-top: 15px;
+            .nav-tabs {
+                border-bottom: 0px;
+                li {
+                    a {
+                        display: inline-block;
+                        height: 55px;
+                        line-height: 2;
+                        border-radius: 0px;
+                        color: c.$bootstrap-black;
+                        background-color: c.$white;
+                        border-top: 0;
+                        border-right: 0;
+                        border-bottom: 3px solid c.$white;
+                        border-left: 0;
+                        svg {
+                            width: 30px;
+                            vertical-align: bottom;
+                            fill: c.$brand-secondary;
+                            &.icon-epc {
+                                .icon-epc__top {
+                                    fill: c.$bootstrap-green;
+                                }
+                                .icon-epc__middle {
+                                    fill: c.$bootstrap-orange;
+                                }
+                                .icon-epc__bottom {
+                                    fill: c.$bootstrap-red;
+                                }
+                            }
+                        }
+                        &:hover,
+                        &:active,
+                        &:focus {
+                            background-color: c.$white;
+                            border-top: 0px;
+                            border-right: 0px;
+                            border-bottom: 3px solid c.$brand-secondary;
+                            border-left: 0px;
+                        }
+                    }
+                    &.active {
+                        a {
+                            background: c.$white;
+                            border-top: 0px;
+                            border-right: 0px;
+                            border-bottom: 3px solid c.$brand-secondary;
+                            border-left: 0px;
+                        }
+                    }
+                }
+            }
+            #property-details-tab-panes {
+                border: 0px;
+                .tab-pane {
+                    padding: 60px 0px;
+                    &#property-long-description {
+                        .tick {
+                            margin-left: 0;
+                            padding-left: 0;
+                            list-style: none;
+                            li {
+                                line-height: 1.5em;
+                                margin-bottom: 25px;
+                                text-align: left;
+                                svg {
+                                    width: 20px;
+                                    fill: c.$brand-primary;
+                                    vertical-align: middle;
+                                }
+                            }
+                        }
+                    }
+                    &#property-location {
+                        #googlemap {
+                            width: 100%;
+                            height: 300px;
+                        }
+                    }
+                }
+            }
+        }
+        .property-contact-box {
+            margin-top: -30px;
+            margin-bottom: 30px;
+            padding: 30px 20px 20px 20px;
+            background-color: c.$white;
+            box-shadow: 0px 0px 9px 1px lighten(c.$grey, 30%);
+            p {
+                line-height: 1em;
+                margin: 0;
+                padding: 0;
+                &.property-tel {
+                    font-size: 1.6em;
+                    font-weight: 700;
+                    padding: 10px 0px 30px 0px;
+                    a {
+                        color: lighten(c.$brand-primary, 15%);
+                    }
+                }
+            }
+            .btn {
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+@media (max-width: 767px) {
+    #property--details {
+        padding-top: 150px !important;
+        .property-header {
+            height: auto;
+        }
+    }
+}
+@media (min-width: 768px) {
+    #property--details {
+        padding-top: 100px;
+    }
+}
+@media (max-width: 991px) {
+    #property--details {
+        .position-relative {
+            .tabs-container {
+                #property-details-tab-panes {
+                    .tab-pane {
+                        padding: 50px 0px 20px 0px;
+                    }
+                }
+            }
+        }
+        .property-contact-box {
+            margin-top: 30px;
+            margin-bottom: 60px;
+        }
+    }
+}
+/* Property details styles end */

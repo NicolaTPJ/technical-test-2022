@@ -1,0 +1,106 @@
+/* Testimonials styles start */
+@use '../abstracts/colors' as c;
+@use '../abstracts/typography' as t;
+
+.testimonial-panel {
+    height: 400px;
+    background-color: c.$brand-primary;
+    svg {
+        width: 30px;
+        fill: lighten(c.$brand-primary, 20%);
+    }
+    .testimonial-text {
+        margin: 30px 0px;
+    }
+    p {
+        color: c.$white;
+        &.testimonial {
+            font-family: t.$secondary;
+            color: c.$white;
+            padding-bottom: 30px;
+            font-size: 1.6em;
+        }
+        a {
+            text-decoration: none;
+            font-weight: 700;
+            color: lighten(c.$brand-primary, 20%);
+            &:hover,
+            &:active,
+            &:focus {
+                color: c.$white;
+            }
+        }
+    }
+}
+@media (min-width: 1201px) and (max-width: 1400px) {
+    .testimonial-panel {
+        .testimonial-text {
+            p {
+                &.testimonial {
+                    font-size: 1.4em;
+                }
+            }
+        }
+    }
+}
+@media (min-width: 1201px) {
+    .testimonial-panel {
+        padding: 50px;
+    }
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+    .testimonial-panel {
+        padding: 20px;
+        .testimonial-text {
+            p {
+                &.testmonial {
+                    font-size: 1.4em;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 991px) {
+    .testimonial-panel {
+        .testimonial-text {
+            p {
+                &.testimonial {
+                    font-size: 1.4em;
+                }
+            }
+        }
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .testimonial-panel {
+        padding: 50px;
+        height: 350px;
+    }
+}
+@media (max-width: 767px) {
+    .testimonial-panel {
+        padding: 30px;
+        height: 450px;
+        .testimonial-panel {
+            p {
+                &.testimonial {
+                    font-size: 1em;
+                }
+            }
+        }
+    }
+}
+#testimonials {
+    .well {
+        background-color: c.$light-grey;
+        border-radius: 0px;
+        h2 {
+            font-size: 1.6em;
+            font-weight: 700;
+            padding: 0px;
+            color: lighten(c.$brand-primary, 15%);
+            margin: 0px;
+        }
+    }
+}
+/* Testimonials styles end */

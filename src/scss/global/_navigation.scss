@@ -1,0 +1,34 @@
+/* Navigation styles start */
+@use '../abstracts/colors' as c;
+
+#main-navigation {
+    h3 {
+        text-transform: uppercase;
+        font-size: 1.4em;
+    }
+    ul {
+        list-style: none;
+        margin-left: 0px;
+        padding-left: 0px;
+        li {
+            padding-top: 6px;
+            padding-bottom: 6px;
+            a {
+                color: c.$white;
+                text-decoration: none;
+                &.active {
+                    color: c.$brand-secondary;
+                }
+                &:hover,
+                &:active,
+                &:focus {
+                    color: c.$brand-secondary;
+                }
+            }
+        }
+    }
+    hr {
+        opacity: 0.6;
+    }
+}
+/* Navigation styles end */

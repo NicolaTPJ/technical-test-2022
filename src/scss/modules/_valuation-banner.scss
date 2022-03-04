@@ -1,0 +1,63 @@
+/* Valuation banner styles start */
+@use '../abstracts/colors' as c;
+@use '../abstracts/typography' as t;
+
+.val-banner-link {
+    display: block;
+    position: relative;
+    z-index: 1;
+    &:hover,
+    &:active,
+    &:focus {
+        text-decoration: none;
+        .val-banner {
+            .icon-valuation {
+                .icon-valuation__house {
+                    fill: lighten(c.$brand-secondary, 20%);
+                }
+            }
+        }
+    }
+    .val-banner {
+        position: relative;
+        text-align: center;
+        color: c.$white;
+        background-color: c.$brand-secondary;
+        padding-bottom: 20px;
+        // SVG classes
+        .icon-valuation {
+            width: 60px;
+            .icon-valuation__house {
+                fill: lighten(c.$brand-primary, 30%);
+            }
+            .icon-valuation__currency {
+                fill: c.$white;
+            }
+        }
+        .val-banner__circle {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: -30px;
+            width: 150px;
+            height: 150px;
+            margin: 0 auto;
+            z-index: -1;
+            fill: c.$brand-secondary;
+        }
+        h4 {
+            font-weight: 400;
+            font-size: 1.8em;
+            span {
+                color: lighten(c.$brand-primary, 30%);
+                font-family: t.$secondary;
+            }
+        }
+        h4,
+        p {
+            margin: 0;
+            padding: 0px 20px;
+        }
+    }
+}
+/* Valuation banner styles end */

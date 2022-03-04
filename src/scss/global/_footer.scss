@@ -1,0 +1,91 @@
+/* Footer styles start */
+@use '../abstracts/colors' as c;
+
+.footer-contact {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: lighten(c.$black, 20%);
+    box-shadow: inset 0px 89px 141px -67px rgba(c.$black, 0.46);
+    h4 {
+        text-transform: uppercase;
+        margin-top: 30px;
+        color: rgb(75, 134, 153);
+        font-weight: 700;
+    }
+    a {
+        color: c.$white;
+        text-decoration: none;
+        &:hover,
+        &:active,
+        &:focus {
+            opacity: 0.6;
+        }
+        svg {
+            width: 20px;
+            fill: c.$white;
+        }
+    }
+    .social-icons {
+        a {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            border: 2px solid c.$white;
+            border-radius: 50%;
+            padding: 0.5rem;
+            text-align: center;
+            vertical-align: middle;
+            .icon-facebook {
+                width: 30px;
+            }
+            .icon-twitter {
+                width: 30px;
+            }
+            .icon-linkedin {
+                width: 25px;
+            }
+            .icon-youtube {
+                width: 30px;
+            }
+        }
+    }
+}
+.footer {
+    color: c.$white;
+    background-color: lighten(c.$black, 20%);
+    font-size: 14px;
+    padding: 20px 0px;
+    a {
+        color: c.$white;
+        &:hover,
+        &:active,
+        &:focus {
+            color: lighten(c.$brand-primary, 20%);
+            text-decoration: none;
+        }
+    }
+    .portal-logos {
+        svg {
+            width: 100px;
+            vertical-align: middle;
+        }
+    }
+}
+@media (max-width: 767.98px) {
+    .footer-contact {
+        text-align: center;
+    }
+}
+@media (max-width: 575.98px) {
+    .footer {
+        font-size: 10px;
+        text-align: center;
+        .portal-logos {
+            svg {
+                width: 80px;
+                vertical-align: middle;
+            }
+        }
+    }
+}
+/* Footer styles end */

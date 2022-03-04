@@ -1,0 +1,191 @@
+/* Home page video styles start */
+@use '../abstracts/colors' as c;
+
+.video-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 90vh;
+    background-color: rgba(c.$black, 0.8);
+    video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .mobile-video-image {
+        position: relative;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100%;
+    }
+    .video-content-area {
+        position: absolute;
+        width: 100%;
+        z-index: 3;
+        p {
+            &.welcome {
+                font-weight: 700;
+                color: lighten(c.$brand-primary, 20%);
+                text-transform: uppercase;
+                padding: 0;
+                font-size: 1.2em;
+            }
+        }
+        h1 {
+            text-transform: uppercase;
+            font-size: 2.2rem;
+            color: c.$white;
+            margin: 0;
+            span {
+                text-transform: none;
+                font-size: 1.3rem;
+                font-weight: lighter;
+            }
+        }
+        .caption p {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: c.$white;
+        }
+        .box {
+            background-color: rgba(c.$black, 0.2);
+            border: 1px solid c.$white;
+            margin-top: 30px;
+            padding: 15px;
+            color: c.$white;
+            .heading {
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: c.$white;
+                text-transform: uppercase;
+            }
+        }
+    }
+    .chevron {
+        position: absolute;
+        z-index: 3;
+        display: block;
+        width: 40px;
+        right: 0;
+        bottom: 5rem;
+        left: 0;
+        margin: 0 auto;
+        svg {
+            fill: c.$white;
+            width: 40px;
+        }
+    }
+    &:after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: linear-gradient(
+            0deg,
+            rgba(c.$black, 0.2) 20%,
+            rgba(c.$black, 0.8) 100%
+        );
+        content: "";
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+    }
+}
+@media (max-width: 991.98px) {
+    .video-container {
+        .video-content-area {
+            .box {
+                background-color: transparent;
+                border: 1px solid transparent;
+            }
+        }
+        .chevron {
+            bottom: 1rem;
+        }
+    }
+}
+@media (max-width: 575.98px) {
+    .video-container {
+        .video-content-area {
+            h2 {
+                &.h1 {
+                    line-height: 1;
+                }
+            }
+        }
+    }
+}
+@media (min-width: 992px) {
+    .video-container {
+        .video-content-area {
+            .box {
+                .btn {
+                    margin-top: 15px;
+                    margin-bottom: 15px;
+                }
+            }
+        }
+    }
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+    .video-container {
+        .video-content-area {
+            .box {
+                margin-top: 20px;
+                padding: 10px;
+                h3 {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+}
+@media (min-width: 768px) {
+    .video-container {
+        .video-content-area {
+            .box {
+                .btn {
+                    width: 220px;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 991px) {
+    .video-container {
+        .video-content-area {
+            .box {
+                padding: 0px;
+                border: 0px;
+                h3 {
+                    margin-top: 0px;
+                    margin-bottom: 0px;
+                    display: none;
+                }
+                p {
+                    display: none;
+                }
+                .btn {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 766.98px) {
+    .video-container {
+        h1,
+        .h1 {
+            font-size: 1.6em;
+        }
+    }
+}
+@media (max-width: 575.98px) {
+    .video-container {
+        .chevron {
+            display: none;
+        }
+    }
+}
+/* Home page video styles end */

@@ -1,0 +1,18 @@
+/* Awaiting images styles start */
+@use '../abstracts/colors' as c;
+
+.awaiting-image {
+    .awaiting-images--background {
+        fill: c.$white;
+    }
+    .awaiting-image--text {
+        fill: c.$brand-primary;
+    }
+    .awaiting-image--elipse {
+        fill: c.$grey;
+    }
+    .awaiting-image--camera {
+        fill: c.$brand-secondary;
+    }
+}
+/* Awaiting images styles end */

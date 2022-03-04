@@ -1,0 +1,16 @@
+/* Corner flash styles start */
+@use '../abstracts/colors' as c;
+
+.corner-flash {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    fill: c.$bootstrap-red;
+    width: 80px;
+    height: 80px;
+    text {
+        fill: c.$white;
+    }
+}
+/* Corner flash styles end */

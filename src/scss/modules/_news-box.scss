@@ -1,0 +1,32 @@
+/* News box styles start */
+@use '../abstracts/colors' as c;
+
+.news-box {
+    h3 {
+        color: c.$brand-primary;
+        line-height: 1.2em;
+        font-weight: 400;
+        a {
+            text-decoration: none;
+            color: c.$brand-primary;
+            &:hover {
+                color: darken(c.$brand-primary, 3%);
+            }
+        }
+    }
+    p {
+        &.news-date {
+            font-weight: 700;
+            color: lighten(c.$grey, 30%);
+            text-transform: uppercase;
+        }
+        &.link {
+            padding-top: 20px;
+            a {
+                font-weight: 400;
+                color: c.$brand-secondary;
+            }
+        }
+    }
+}
+/* News box styles end */

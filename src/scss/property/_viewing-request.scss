@@ -1,0 +1,27 @@
+/* Viewing request styles start */
+@use '../abstracts/colors' as c;
+
+.small-header {
+    background-size: cover;
+    height: 300px;
+    position: relative;
+    .property-content-area-contain {
+        background: rgba(c.$brand-primary, 0.7);
+        display: table;
+        height: 100%;
+        width: 100%;
+        .property-content-area {
+            display: table-cell;
+            height: 100%;
+            width: 100%;
+            vertical-align: middle;
+            h1 {
+                font-size: 1.8em;
+                font-weight: 700;
+                margin-bottom: 0px;
+                color: c.$white;
+            }
+        }
+    }
+}
+/* Viewing request styles end */

@@ -1,0 +1,19 @@
+{!if $type === "featured"}
+{!assign var="type" value="$featured_properties"}
+{!elseif $type === "recent"}
+{!assign var="type" value="$recent_properties"}
+{!/if}
+{!foreach from=$type item=property}
+<a href="{!$property.propertylink}" class="featured-property" style="background: url({!$property.images.0}/900)0 0 no-repeat; background-size: cover;">
+    <div class="featured-property--panel">
+        <h3>{!if $property.featured == "1"}Featured{!else}Latest{!/if} Property</h3>
+        <h4>{!if $property.display_address}{!$property.display_address}{!else}{!$property.full_published_address}{!/if} - {!if $property.poa}POA{!else}&pound;{!$property.price|number_format} {!if $property.instruction_type == "Letting"}PCM{!/if}{!/if}</h4>
+    </div>
+    <div class="featured-property--hover">
+        <div>
+            <h4>{!if $property.display_address}{!$property.display_address}{!else}{!$property.full_published_address}{!/if} - {!if $property.poa}POA{!else}&pound;{!$property.price|number_format} {!if $property.instruction_type == "Letting"}PCM{!/if}{!/if}</h4>
+            <p class="hidden-xs">{!$property.short_description|strip_tags:true|truncate:300}</p>
+        </div>
+    </div>
+</a>
+{!/foreach}

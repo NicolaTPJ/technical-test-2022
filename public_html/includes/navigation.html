@@ -1,0 +1,40 @@
+<div class="col-sm-6 col-md-3">
+    <h3>Welcome</h3>
+    <ul style="list-style:none;">
+        <li><a href="/" {!if $this_page=="/"}class="active"{!/if} title="Home Page">Home</a></li>
+        <li><a href="/about-us/" {!if $this_page=="/about-us/"}class="active"{!/if} title="About Us">About Us</a></li>
+        <li><a href="/meet-the-team/" {!if $this_page=="/meet-the-team/" || $this_page|contains:"/team/"}class="active"{!/if} title="Meet The Team">Meet The Team</a></li>
+        <li><a href="/testimonials/" {!if $this_page=="/testimonials/"}class="active"{!/if} title="Testimonials">Testimonials</a></li>
+        <li><a href="/news-and-updates/" {!if $this_page=="/news-and-updates/"}class="active"{!/if} title="News">News</a></li>
+    </ul>
+    <hr class="visible-xs">
+</div>
+<div class="col-sm-6 col-md-3">
+    <h3>Sales</h3>
+    <ul style="list-style:none;">
+        <li><a href="/sales/" {!if $this_page=="/sales/"}class="active"{!/if} title="Sales">Sales</a></li>
+        <li><a href="/search/?showstc=off&amp;showsold=off&amp;instruction_type=Sale" title="Properties for Sale">Properties for Sale</a></li>
+        <li><a href="/saved-properties/" {!if $this_page=="/saved-properties/"} class="active" {!/if} title="Saved Properties">View Shortlist</a></li>
+        <!-- <li><a href="{!#conveyancing#}" rel="noopener noreferrer" target="_blank">Conveyancing Quote</a></li> -->
+    </ul>
+    <hr class="visible-xs">
+</div>
+<div class="clearfix visible-sm"></div>
+<div class="col-sm-6 col-md-3">
+    <h3>Lettings</h3>
+    <ul style="list-style:none;">
+        <li><a href="/lettings/" {!if $this_page=="/lettings/"}class="active"{!/if} title="Lettings">Lettings</a></li>
+        <li><a href="/search/?showstc=off&amp;showsold=off&amp;instruction_type=Letting" title="Properties for Rent">Properties for Rent</a></li>
+        <li><a href="/saved-properties/" {!if $this_page=="/saved-properties/"} class="active" {!/if} title="Saved Properties">View Shortlist</a></li>
+    </ul>
+    <hr class="visible-xs">
+</div>
+<div class="col-sm-6 col-md-3">
+    <h3>Contact</h3>
+    <ul style="list-style:none;">
+        <li><a href="/contact-us/" {!if $this_page=="/contact-us/"}class="active"{!/if} title="Contact Us">Contact Us</a></li>
+        <li><a href="/request-a-valuation/" {!if $this_page=="/request-a-valuation/"}class="active"{!/if}>Book a Valuation</a></li>
+        <li><a href="{!#valpal#}" title="Free Online Valuation" target="_blank">Free Online Valuation</a></li>
+        <li><a href="/register/" {!if $this_page=="/register/"}class=" active"{!/if} title="Register">Register</a></li>
+    </ul>
+</div>

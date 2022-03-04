@@ -1,0 +1,135 @@
+/* Similar properties styles start */
+@use '../abstracts/colors' as c;
+@use '../abstracts/typography' as t;
+
+#similar-properties__title {
+    position: relative;
+    font-family: t.$primary;
+    color: c.$brand-primary;
+    font-weight: 700;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 5rem;
+    &:after {
+        position: absolute;
+        content: "";
+        background-color: lighten(c.$grey, 40%);
+        height: 4px;
+        width: 30px;
+        right: 0;
+        bottom: -25px;
+        left: 0;
+        margin: 0 auto;
+    }
+}
+#similar-properties {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 2rem 0 4rem 0;
+    .similar-property {
+        display: block;
+        position: relative;
+        flex-basis: 31%;
+        text-align: center;
+        box-shadow: 0px 0px 9px 1px lighten(c.$grey, 30%);
+        &:hover,
+        &:active,
+        &:focus {
+            text-decoration: none;
+        }
+        &:first-of-type {
+            margin-right: 1rem;
+        }
+        &:last-of-type {
+            margin-left: 1rem;
+        }
+        img {
+            object-fit: cover;
+            width: 100%;
+            height: 250px;
+        }
+        .similar-property__meta {
+            padding: 1rem 1rem 2rem 1rem;
+            .similar-property__room-icons {
+                margin-top: 20px;
+                margin-bottom: 20px;
+                svg {
+                    fill: c.$grey;
+                    &.icon-bedrooms {
+                        height: 40px;
+                        vertical-align: bottom;
+                    }
+                    &.icon-bathrooms {
+                        height: 40px;
+                        vertical-align: baseline;
+                    }
+                    &.icon-receptions {
+                        height: 40px;
+                        vertical-align: bottom;
+                    }
+                }
+                span {
+                    padding-right: 10px;
+                    font-size: 1.4rem;
+                    color: c.$brand-primary;
+                }
+            }
+            .similar-property__address {
+                font-family: t.$primary;
+                color: c.$brand-primary;
+                font-weight: 700;
+                font-size: 1.4em;
+            }
+            .similar-property__availability {
+                font-size: 1.2rem;
+                font-weight: 400;
+                color: c.$grey;
+                text-transform: uppercase;
+            }
+            .similar-property__price {
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: c.$brand-secondary;
+            }
+        }
+    }
+}
+@media (max-width: 767px) {
+    #similar-properties__title {
+        font-size: 2rem;
+        margin-top: 2rem;
+    }
+    #similar-properties {
+        .similar-property {
+            flex-basis: 100% !important;
+            &:first-of-type {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+            img {
+                height: 350px !important;
+            }
+        }
+    }
+}
+@media (max-width: 991px) {
+    #similar-properties {
+        .similar-property {
+            flex-basis: 47%;
+            // Third one in the display set to 96% width
+            &:nth-child(3) {
+                flex-basis: 96%;
+                margin-top: 1rem;
+                img {
+                    height: 450px;
+                }
+            }
+            // Remove the last of type margin
+            &:last-of-type {
+                margin-left: 0;
+            }
+        }
+    }
+}
+/* Similar properties styles end */

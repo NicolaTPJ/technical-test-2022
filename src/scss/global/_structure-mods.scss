@@ -1,0 +1,96 @@
+/* Row modifications start */
+.row-lg {
+    padding: 100px 0px;
+}
+.row-lg-bottom {
+    padding: 0px 0px 100px 0px;
+}
+.row-lg-top {
+    padding: 100px 0px 0px 0px;
+}
+.row-md {
+    padding: 50px 0px;
+}
+.row-md-top {
+    padding: 50px 0px 0px 0px;
+}
+.row-md-bottom {
+    padding: 0px 0px 50px 0px;
+}
+.row-sm {
+    padding: 30px 0px;
+}
+.row-sm-top {
+    padding: 30px 0px 0px 0px;
+}
+.row-sm-bottom {
+    padding: 0px 0px 30px 0px;
+}
+.row-xs {
+    padding: 15px 0px;
+}
+.row-xs-top {
+    padding: 15px 0px 0px 0px;
+}
+.row-xs-bottom {
+    padding: 0px 0px 15px 0px;
+}
+.mt-3 {
+    margin-top: 3rem;
+}
+.mb-3 {
+    margin-bottom: 3rem;
+}
+.no-padding {
+    padding: 0px;
+}
+.no-margin {
+    margin: 0px;
+}
+.top-margin {
+    margin-top: 50px;
+}
+.bottom-margin {
+    margin-bottom: 50px;
+}
+.vertical-align-container {
+    display: table;
+    height: inherit;
+}
+.vertical-align-content {
+    display: table-cell;
+    vertical-align: middle;
+}
+.position-relative {
+    position: relative;
+}
+@media (max-width: 767px) {
+    .row-lg {
+        padding: 30px 0px;
+    }
+    .row-lg-bottom {
+        padding: 0px 0px 30px 0px;
+    }
+    .row-lg-top {
+        padding: 30px 0px 0px 0px;
+    }
+    .row-md {
+        padding: 20px 0px;
+    }
+    .row-md-top {
+        padding: 20px 0px 0px 0px;
+    }
+    .row-md-bottom {
+        padding: 0px 0px 20px 0px;
+    }
+    .row-sm {
+        padding: 20px 0px;
+    }
+    .row-sm-top {
+        padding: 20px 0px 0px 0px;
+    }
+    .row-sm-bottom {
+        padding: 0px 0px 20px 0px;
+    }
+}
+/* Row modifications end */

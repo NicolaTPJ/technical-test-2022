@@ -1,0 +1,27 @@
+<div class="row">
+	<div class="col-md-6">
+		<ol class="pagination">
+			{!if $cms_page == 1}
+			{!else}
+			<li><a href="{!$this_page|escape}?{!fetch_query_string cms_page=$cms_page-1}" rel="prev">&laquo;</a></li>
+			{!/if}
+			{!section name=n loop=$cms_pagelist}
+			{!assign var=n value=$cms_pagelist[$smarty.section.n.index]}
+			{!if $n >= 1 and $n <= $cms_pages}
+				{!if $n == $cms_page}
+				<li><a href="#" class="active">{!$n}</a></li>
+				{!else}
+				<li><a href="{!$this_page|escape}?{!fetch_query_string cms_page=$n}">{!$n}</a></li>
+				{!/if}
+			{!/if}
+			{!/section}
+			{!if $n == $cms_page}
+			{!else}
+			<li><a href="{!$this_page|escape}?{!fetch_query_string cms_page=$cms_page+1}" rel="next">&raquo;</a></li>
+			{!/if}
+		</ol>
+	</div>
+	<div class="col-md-6 text-right">
+		Showing page <strong>{!$cms_page|escape}</strong> of <strong>{!$cms_pages|escape}</strong>
+	</div>
+</div>

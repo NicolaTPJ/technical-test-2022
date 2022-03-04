@@ -1,0 +1,90 @@
+/* Button styles start */
+@use '../abstracts/colors' as c;
+
+.btn {
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 42px;
+    padding: 0px 15px;
+    letter-spacing: 0.1em;
+    transition: all 0.4s ease-in-out;
+    outline: 0 !important;
+    &.btn-primary {
+        color: c.$white !important;
+        background-color: c.$brand-primary;
+        border: 1px solid lighten(c.$brand-primary, 3%);
+        border-radius: 50px;
+        &:focus,
+        &:hover,
+        &:active {
+            color: c.$white;
+            background-color: darken(c.$brand-primary, 3%);
+            border: 1px solid darken(c.$brand-primary, 5%);
+        }
+    }
+    &.btn-ghost {
+        color: c.$white !important;
+        background-color: transparent;
+        border: 2px solid lighten(c.$brand-primary, 3%);
+        border-radius: 0px; 
+        &:focus,
+        &:hover,
+        &:active {
+            color: c.$white;
+            border: 2px solid darken(c.$brand-primary, 5%);
+        }
+    }
+    &.btn-ghost-property {
+        color: c.$brand-primary !important;
+        background-color: transparent;
+        border: 2px solid c.$brand-primary;
+        border-radius: 50px;
+        &:focus,
+        &:hover,
+        &:active {
+            color: c.$white !important;
+            background-color: darken(c.$brand-primary, 3%);
+            border: 2px solid darken(c.$brand-primary, 5%);
+        }
+    }
+    &.btn-light {
+        color: c.$white !important;
+        background-color: c.$brand-secondary;
+        border: 2px solid c.$brand-secondary;
+        border-radius: 50px;
+        &:focus,
+        &:hover,
+        &:active {
+            color: c.$white;
+            background-color: darken(c.$brand-secondary, 3%);
+            border: 2px solid darken(c.$brand-secondary, 3%);
+        }
+    }
+    &.btn-rectangle {
+        color: c.$white !important;
+        background-color: c.$brand-primary;
+        border: 2px solid c.$brand-primary;
+        border-radius: 0px;
+        &:focus,
+        &:hover,
+        &:active {
+            color: c.$white;
+            background-color: darken(c.$brand-primary, 3%);
+            border: 2px solid darken(c.$brand-primary, 5%);
+        }
+    }
+    &.btn-rectangle-ghost {
+        color: c.$brand-primary !important;
+        background-color: transparent;
+        border: 2px solid c.$brand-primary;
+        border-radius: 0px;
+        &:focus,
+        &:hover,
+        &:active {
+            color: c.$white !important;
+            background-color: darken(c.$brand-primary, 3%);
+            border: 2px solid darken(c.$brand-primary, 5%);
+        }
+    }
+}
+/* Button styles end */

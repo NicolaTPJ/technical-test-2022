@@ -1,0 +1,25 @@
+/* CMS styles start */
+@use '../abstracts/colors' as c;
+
+#article-body {
+    margin-bottom: 40px;
+    p {
+        text-align: justify;
+    }
+    img {
+        margin-bottom: 40px;
+    }
+}
+.content-title {
+    h2 {
+        color: lighten(c.$brand-primary, 15%);
+        font-weight: 700;
+        text-align: center;
+    }
+    h3 {
+        color: lighten(c.$brand-primary, 15%);
+        font-weight: 700;
+        text-align: center;
+    }
+}
+/* CMS styles end */
